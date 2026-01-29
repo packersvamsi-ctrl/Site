@@ -29,8 +29,8 @@ const Header = () => {
               className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto object-contain"
               loading="eager"
             />
-            <div className="hidden sm:flex sm:flex-col">
-              <h1 className="font-heading font-bold text-sm sm:text-base md:text-lg text-foreground leading-tight">
+            <div className="flex flex-col">
+              <h1 className="font-heading font-bold text-xs sm:text-base md:text-lg text-foreground leading-tight">
                 Vamsi Packers
               </h1>
               <p className="text-xs text-muted-foreground font-subtitle">& Movers</p>
