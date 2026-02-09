@@ -19,7 +19,7 @@ const services = [
     icon: Package,
     title: "Packing and Unpacking",
     description:
-      "Our expert team uses high-quality packing materials to ensure your belongings are safely packed and protected during transit. We handle everything from fragile glassware to heavy furniture with utmost care.",
+      "Our expert team uses high-quality packing materials to ensure your belongings are safely packed and protected during transit. We handle everything from fragile glassware to heavy furniture with utmost care. We offer tailored packing plans, inventory management, secure sealing, and gentle unpacking so you’re ready immediately at destination. Our crews use color-coded labeling, anti-static wrapping for electronics, padded crates for antiques, on-site supervisors and optional furniture assembly—reducing claims and accelerating setup at arrival.",
     features: [
       "Quality packing materials",
       "Trained packing professionals",
@@ -31,7 +31,7 @@ const services = [
     icon: Car,
     title: "Car Transportation",
     description:
-      "Specialized car carrier vehicles for safe and secure transportation of your vehicles across India. We ensure your car reaches the destination in perfect condition.",
+      "Specialized car carrier vehicles for safe and secure transportation of your vehicles across India. We ensure your car reaches the destination in perfect condition. Each vehicle receives pre-transport inspection, secure tie-downs, covered carriers and tracking, plus optional door-to-door handling and insurance for peace of mind. We provide VIN-level tracking, post-delivery photo checks, climate-controlled trailers for classic cars, white-glove handover and streamlined paperwork to protect value and speed the delivery process.",
     features: [
       "Enclosed carrier vehicles",
       "GPS tracking available",
@@ -43,7 +43,7 @@ const services = [
     icon: Truck,
     title: "Loading and Unloading",
     description:
-      "Our trained professionals handle loading and unloading with precision, using proper equipment and techniques to prevent any damage to your belongings.",
+      "Our trained professionals handle loading and unloading with precision, using proper equipment and techniques to prevent any damage to your belongings. We use forklifts, ramps and trained riggers to protect heavy items, ensuring balanced loading and damage-free placement at the new site. Teams apply padded slings, floor protection, weight distribution planning and barcode inventory checks so items are tracked and positioned correctly during transit and delivery.",
     features: [
       "Trained handling team",
       "Modern equipment",
@@ -55,7 +55,7 @@ const services = [
     icon: MapPin,
     title: "Local Shifting",
     description:
-      "Quick and efficient local relocation services within your city. We make moving within the city hassle-free with our streamlined process.",
+      "Quick and efficient local relocation services within your city. We make moving within the city hassle-free with our streamlined process. Our team plans routes, manages parking and permits, and coordinates timing to reduce downtime and make local moves frictionless and efficient. We arrange elevator and stair access, provide short-term holding options, and offer configurable time windows to suit your schedule and minimize disruption.",
     features: [
       "Same-day service",
       "Affordable rates",
@@ -67,7 +67,7 @@ const services = [
     icon: Warehouse,
     title: "Warehousing",
     description:
-      "Safe and secure storage facilities for your belongings. Whether you need short-term or long-term storage, our warehouses are equipped to keep your items safe.",
+      "Safe and secure storage facilities for your belongings. Whether you need short-term or long-term storage, our warehouses are equipped to keep your items safe. Inventory management, pallet racking, CCTV monitoring and periodic condition checks keep stored goods organized and retrievable when you need them. We offer dedicated bins for fragile items, climate-controlled zones for sensitive goods, scheduled auditing and easy digital access to your stored inventory.",
     features: [
       "24/7 security",
       "Climate controlled",
@@ -79,7 +79,7 @@ const services = [
     icon: Shield,
     title: "Transit Insurance",
     description:
-      "Comprehensive insurance coverage for your belongings during transit. We provide complete peace of mind with our insurance options for all goods.",
+      "Comprehensive insurance coverage for your belongings during transit. We provide complete peace of mind with our insurance options for all goods. Transparent policies, quick claims handling and optional valuation add-ons protect high-value items during every stage of transit and storage. Our claims team assists with documentation, rapid surveys, salvage coordination and settlement guidance to minimize disruption after any incident.",
     features: [
       "Full value coverage",
       "Easy claim process",
@@ -91,7 +91,7 @@ const services = [
     icon: MoveRight,
     title: "Transportation",
     description:
-      "Reliable transportation services across India with our fleet of well-maintained vehicles. We ensure timely and safe delivery of your goods.",
+      "Reliable transportation services across India with our fleet of well-maintained vehicles. We ensure timely and safe delivery of your goods. Dedicated routes, driver vetting, scheduled maintenance and cargo-secure fittings minimize delays and protect consignments from origin to destination. Clients can choose consolidation or dedicated options, receive live ETAs, and benefit from route-optimization and contingency planning.",
     features: [
       "Pan-India network",
       "Well-maintained fleet",
@@ -103,7 +103,7 @@ const services = [
     icon: PackageOpen,
     title: "Moving",
     description:
-      "Complete moving solutions for residential and commercial relocations. From planning to execution, we handle everything for a seamless move.",
+      "Complete moving solutions for residential and commercial relocations. From planning to execution, we handle everything for a seamless move. Project managers coordinate timelines, packing lists, transit windows and onsite setup so relocations finish on schedule with minimal disruption. We provide pre-move surveys, detailed checklists, subcontractor coordination, protective measures, and a final walkthrough to confirm client satisfaction and functionality.",
     features: [
       "Complete relocation",
       "Office shifting",

@@ -22,11 +22,6 @@ const galleryImages = [
     category: "Car Transport",
   },
   {
-    src: "/gallery/work-4.jpg",
-    alt: "Warehouse storage facility",
-    category: "Warehousing",
-  },
-  {
     src: "/gallery/work-5.jpg",
     alt: "Office relocation",
     category: "Office Shifting",
@@ -50,11 +45,6 @@ const galleryImages = [
     src: "/gallery/work-9.jpg",
     alt: "Careful handling of items",
     category: "Loading",
-  },
-  {
-    src: "/gallery/work-10.jpg",
-    alt: "Team at work",
-    category: "Team",
   },
   {
     src: "/gallery/work-11.jpg",

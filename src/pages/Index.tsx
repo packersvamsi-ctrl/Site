@@ -53,7 +53,7 @@ const services = [
 
 const stats = [
   { icon: Users, value: "10,000+", label: "Happy Customers" },
-  { icon: Award, value: "15+", label: "Years Experience" },
+  { icon: Award, value: "30+", label: "Years Experience" },
   { icon: MapPin, value: "500+", label: "Cities Covered" },
   { icon: Clock, value: "24/7", label: "Support Available" },
 ];
@@ -109,7 +109,7 @@ const Index = () => {
                 />
               </div>
               <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-3 sm:-left-6 md:-left-6 bg-primary text-primary-foreground p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-lg">
-                <p className="font-heading font-bold text-xl sm:text-2xl md:text-3xl">15+</p>
+                <p className="font-heading font-bold text-xl sm:text-2xl md:text-3xl">30+</p>
                 <p className="font-subtitle text-xs sm:text-sm">Years of Excellence</p>
               </div>
             </div>
@@ -136,6 +136,58 @@ const Index = () => {
                 View All Services <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Showcase Section */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
+          {/* Row 1 — video left on desktop, video first on mobile */}
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+            <div className="md:w-1/2 w-full">
+              <video
+                src="/house.mp4"
+                playsInline
+                muted
+                autoPlay
+                loop
+                preload="metadata"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="md:w-1/2 w-full">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Household & Office Packing</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Specialist packing and transport for homes and offices — room-by-room packing with
+                premium materials, custom crating for fragile items, secure loading and transport,
+                and careful delivery. We handle furniture, electronics, and valuables with care to
+                ensure they arrive intact.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2 — video right on desktop, video first on mobile */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-12">
+            <div className="md:w-1/2 w-full">
+              <video
+                src="/car.mp4"
+                playsInline
+                muted
+                autoPlay
+                loop
+                preload="metadata"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="md:w-1/2 w-full">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Vehicle Packing & Transport</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Specialized solutions for cars and bikes — secure cradles, fuel-safe procedures,
+                covered transport, and door-to-door handling. We perform inspections, offer
+                optional insurance, and use expert loading techniques to protect vehicles in transit.
+              </p>
+            </div>
           </div>
         </div>
       </section>

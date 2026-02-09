@@ -24,7 +24,7 @@ const About = () => {
             <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               About Us
             </span>
-            <h1 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 text-secondary-foreground leading-tight">
+            <h1 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 text-secondary-foreground leading-tight title-reveal">
               Vamsi Packers and Movers
             </h1>
             <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg text-secondary-foreground/80 mt-4 sm:mt-5 md:mt-6">
@@ -85,7 +85,7 @@ const About = () => {
               <h3 className="font-heading font-semibold text-lg sm:text-xl text-foreground">Founder</h3>
               <p className="font-subtitle text-sm text-muted-foreground">(founder name)</p>
               <p className="font-body text-muted-foreground mt-3 sm:mt-4 text-xs sm:text-sm md:text-base">
-                With over 15 years of experience in the logistics industry, our founder established
+                With over 30+ years of experience in the logistics industry, our founder established
                 Vamsi Packers and Movers with a vision to provide reliable, safe, and affordable
                 relocation services across India.
               </p>
@@ -202,6 +202,49 @@ const About = () => {
               <p className="font-body text-xs sm:text-sm md:text-base text-secondary-foreground/70">
                 Building long-lasting relationships through reliability and transparency.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* Videos + Map Section */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+            <video
+              src="/house.mp4"
+              playsInline
+              muted
+              autoPlay
+              loop
+              preload="metadata"
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+
+            <video
+              src="/car.mp4"
+              playsInline
+              muted
+              autoPlay
+              loop
+              preload="metadata"
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+          </div>
+
+          <div className="mt-6">
+            <h3 className="font-heading font-semibold text-lg sm:text-xl mb-3">Our Location</h3>
+            <div className="w-full h-56 sm:h-64 md:h-72 rounded-lg overflow-hidden border border-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.5!2d83.3!3d17.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vamsi Packers and Movers Location"
+              />
             </div>
           </div>
         </div>
