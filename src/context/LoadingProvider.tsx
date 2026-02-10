@@ -90,10 +90,14 @@ export const LoadingProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setLoading(false);
   }, []);
 
+  if (loading) {
+    // block rendering app until initial preload finishes
+    return <LoadingScreen visible={visible} percent={percent} />;
+  }
+
   return (
     <LoadingContext.Provider value={{ show, hide, percent, loading }}>
       {children}
-      <LoadingScreen visible={visible} percent={percent} />
     </LoadingContext.Provider>
   );
 };
