@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import HeroCarousel from "@/components/HeroCarousel";
 import SectionTitle from "@/components/SectionTitle";
+import Animated from "@/components/Animated";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -76,7 +77,7 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start lg:items-center">
             <div className="order-2 lg:order-1">
               <SectionTitle
@@ -114,12 +115,12 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Services Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <SectionTitle
             subtitle="Our Services"
             title="Complete Moving Solutions"
@@ -137,12 +138,12 @@ const Index = () => {
               </Link>
             </Button>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Video Showcase Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
           {/* Row 1 — video left on desktop, video first on mobile */}
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
             <div className="md:w-1/2 w-full">
@@ -189,12 +190,12 @@ const Index = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Stats Section */}
       <section className="py-8 sm:py-12 md:py-16 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -206,12 +207,12 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover">
@@ -240,12 +241,12 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* CTA Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+        <Animated variant="pop" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6">
             Ready to Move?
           </h2>
@@ -265,7 +266,7 @@ const Index = () => {
               <a href="tel:+919247872222">Call Now: +91 92478 72222</a>
             </Button>
           </div>
-        </div>
+        </Animated>
       </section>
     </Layout>
   );

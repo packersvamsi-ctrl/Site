@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
+import Animated from "@/components/Animated";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -118,7 +119,7 @@ const Services = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Our Services
@@ -131,7 +132,7 @@ const Services = () => {
               needs.
             </p>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Services Grid */}
@@ -139,8 +140,10 @@ const Services = () => {
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
             {services.map((service, index) => (
-              <div
+              <Animated
                 key={service.title}
+                variant={index % 2 === 0 ? "glide" : "pop"}
+                direction={index % 2 === 0 ? "left" : "right"}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
@@ -177,7 +180,7 @@ const Services = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </Animated>
             ))}
           </div>
         </div>

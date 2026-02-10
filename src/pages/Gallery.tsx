@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
+import Animated from "@/components/Animated";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
@@ -73,7 +74,7 @@ const Gallery = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Our Work
@@ -86,12 +87,12 @@ const Gallery = () => {
               professionalism.
             </p>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Filter Buttons */}
       <section className="py-6 sm:py-8 md:py-10 bg-background border-b border-border">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {categories.map((category) => (
               <button
@@ -107,7 +108,7 @@ const Gallery = () => {
               </button>
             ))}
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Gallery Grid */}

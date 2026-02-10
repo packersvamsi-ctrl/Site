@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
+import Animated from "@/components/Animated";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle, Target, Eye, Award } from "lucide-react";
@@ -19,7 +20,7 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               About Us
@@ -32,12 +33,12 @@ const About = () => {
               organization focused upon Service, Quality and Trust"
             </p>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* About Content */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <SectionTitle subtitle="Our Story" title="Welcome to Vamsi Packers and Movers" centered={false} />
@@ -91,12 +92,12 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Vision & Mission */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
             {/* Vision */}
             <div className="bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-card">
@@ -132,12 +133,12 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Why Choose Us */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <SectionTitle
             subtitle="Why Us?"
             title="What Makes Us Different"
@@ -157,12 +158,12 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Values */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+        <Animated variant="pop" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <SectionTitle
             subtitle="Our Values"
             title="Service, Quality & Trust"
@@ -204,7 +205,7 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
 
             {/* Videos + Map Section */}

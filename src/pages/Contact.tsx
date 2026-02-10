@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
+import Animated from "@/components/Animated";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -76,7 +77,7 @@ const Contact = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Contact Us
@@ -89,12 +90,12 @@ const Contact = () => {
               moving needs.
             </p>
           </div>
-        </div>
+        </Animated>
       </section>
 
       {/* Contact Content */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-card">
@@ -209,7 +210,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Animated>
       </section>
     </Layout>
   );
