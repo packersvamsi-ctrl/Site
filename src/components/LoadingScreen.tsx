@@ -25,29 +25,29 @@ const LoadingScreen: React.FC<Props> = ({ visible, percent }) => {
         >
           <div className="flex flex-col items-center justify-center px-6 text-center">
             
-            {/* Logo – bigger, confident presence */}
+            {/* Logo – refined, no heavy shadows, just presence */}
             <motion.img
               src="/vamsi.png"
               alt="Vamsi Packers and Movers"
               initial={{ scale: 0.9, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="h-24 w-auto mb-6 drop-shadow-lg"
+              className="h-16 w-auto mb-6 drop-shadow-lg"
             />
 
-            {/* Full brand name – smaller, refined */}
+            {/* Full brand name – typography as the anchor */}
             <motion.h1
               initial={{ y: 8, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-2xl sm:text-3xl md:text-4xl font-light tracking-[-0.02em] text-white"
+              className="text-3xl sm:text-4xl md:text-5xl font-light tracking-[-0.02em] text-white"
             >
               <span className="text-orange-500 font-medium">Vamsi</span>{" "}
               <span className="text-white/95">Packers and Movers</span>
             </motion.h1>
 
             {/* Progress – clean, thin, brand‑colored */}
-            <div className="w-64 sm:w-80 flex flex-col items-center gap-3 mt-8">
+            <div className="w-64 sm:w-80 flex flex-col items-center gap-3 mt-12">
               <div className="w-full h-[2px] bg-white/20 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-orange-500 rounded-full"
@@ -65,10 +65,6 @@ const LoadingScreen: React.FC<Props> = ({ visible, percent }) => {
               >
                 {clampedPercent}%
               </motion.div>
-
-              <div className="text-white/40 text-[0.65rem] sm:text-xs uppercase tracking-[0.25em] mt-2">
-                preparing experience
-              </div>
             </div>
           </div>
         </motion.div>

@@ -101,12 +101,15 @@ const Index = () => {
               </Button>
             </Animated>
             <Animated variant="ken-burns" className="order-1 lg:order-2 relative" duration={1.0}>
-              <div className="aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover">
+              <div className="aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-slate-800 to-slate-900">
                 <img
                   src="/banners/banner-3.jpg"
                   alt="Professional packing service"
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
                 />
               </div>
               <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-3 sm:-left-6 md:-left-6 bg-primary text-primary-foreground p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-lg">
@@ -164,8 +167,11 @@ const Index = () => {
                 muted
                 autoPlay
                 loop
-                preload="metadata"
-                className="w-full h-auto rounded-lg shadow-lg"
+                preload="auto"
+                controlsList="nodownload"
+                webkit-playsinline="true"
+                className="w-full h-auto rounded-lg shadow-lg bg-black"
+                onError={(e) => console.error('Video error:', e)}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
@@ -188,8 +194,11 @@ const Index = () => {
                 muted
                 autoPlay
                 loop
-                preload="metadata"
-                className="w-full h-auto rounded-lg shadow-lg"
+                preload="auto"
+                controlsList="nodownload"
+                webkit-playsinline="true"
+                className="w-full h-auto rounded-lg shadow-lg bg-black"
+                onError={(e) => console.error('Video error:', e)}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
@@ -233,12 +242,15 @@ const Index = () => {
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
             <Animated variant="mask-reveal" className="order-2 lg:order-1" duration={0.85}>
-              <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover">
+              <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-slate-800 to-slate-900">
                 <img
                   src="/banners/banner-1.jpg"
                   alt="Professional moving team"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
                 />
               </div>
             </Animated>

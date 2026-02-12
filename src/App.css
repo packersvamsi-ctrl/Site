@@ -47,6 +47,23 @@ body {
   box-sizing: border-box;
 }
 
+/* Mobile video optimization */
+video {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 /* Responsive container defaults */
 .container {
   width: 100%;
