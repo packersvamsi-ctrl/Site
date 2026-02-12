@@ -118,6 +118,16 @@ const Footer = () => {
               </li>
 
               <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
+                  href="tel:+919247872222"
+                  className="font-body text-muted-foreground text-xs sm:text-sm hover:text-primary transition-colors"
+                >
+                  +91 9032616993
+                </a>
+              </li>
+
+              <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
                   href="mailto:info@vamsipackers.com"

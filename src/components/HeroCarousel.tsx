@@ -1,160 +1,154 @@
-import { useEffect, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-interface Slide {
-  image: string;
-  title: string;
-  subtitle: string;
-  cta: string;
-  link: string;
-}
+const HeroSection = () => {
+  const [zoomDone, setZoomDone] = useState(false);
+  const [gradientVisible, setGradientVisible] = useState(false);
+  const [titleVisible, setTitleVisible] = useState(false);
+  const [subtitleVisible, setSubtitleVisible] = useState(false);
+  const [buttonsVisible, setButtonsVisible] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const isMobile = useIsMobile();
 
-const slides: Slide[] = [
-  {
-    image: "/banners/banner-1.jpg",
-    title: "Trusted Packers & Movers",
-    subtitle: "Safe, secure, and timely delivery of your belongings across India",
-    cta: "Get Free Quote",
-    link: "/contact",
-  },
-  {
-    image: "/banners/banner-2.jpg",
-    title: "Expert Car Transportation",
-    subtitle: "Specialized vehicles for safe car transport to any destination",
-    cta: "Learn More",
-    link: "/services",
-  },
-  {
-    image: "/banners/banner-3.jpg",
-    title: "Professional Packing",
-    subtitle: "Quality packing materials and trained professionals for your valuables",
-    cta: "Our Services",
-    link: "/services",
-  },
-  {
-    image: "/banners/banner-4.jpg",
-    title: "Secure Warehousing",
-    subtitle: "Safe storage solutions for short and long-term needs",
-    cta: "Contact Us",
-    link: "/contact",
-  },
-  {
-    image: "/banners/banner-5.jpg",
-    title: "Pan-India Network",
-    subtitle: "Seamless relocation services with presence in all major cities",
-    cta: "Get Started",
-    link: "/contact",
-  },
-];
+  const fullText =
+    "Safe • Secure • Reliable Relocation Services Across India";
 
-const HeroCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  }, []);
-
+  // ----- PREMIUM CINEMATIC SEQUENCE (tight cascading, minimal gaps) -----
   useEffect(() => {
-    if (!isAutoPlaying) return;
-    const timer = setInterval(nextSlide, 5000);
-    return () => clearInterval(timer);
-  }, [isAutoPlaying, nextSlide]);
+    // 1. Start zoom animation (0ms) - duration 4200ms
+    const zoomTimer = setTimeout(() => setZoomDone(true), 50);
+
+    // 2. Gradient starts sooner (600ms) - duration 1500ms
+    const gradientTimer = setTimeout(() => setGradientVisible(true), 600);
+
+    // 3. Title starts (1200ms) - duration 1200ms
+    const titleTimer = setTimeout(() => setTitleVisible(true), 1200);
+
+    // 4. Subtitle starts (2000ms) - after title settles
+    const subtitleTimer = setTimeout(() => setSubtitleVisible(true), 2000);
+
+    // 5. Buttons start (2700ms) - after subtitle is visible
+    const buttonsTimer = setTimeout(() => setButtonsVisible(true), 2700);
+
+    return () => {
+      clearTimeout(zoomTimer);
+      clearTimeout(gradientTimer);
+      clearTimeout(titleTimer);
+      clearTimeout(subtitleTimer);
+      clearTimeout(buttonsTimer);
+    };
+  }, []);
+
+  // ----- SMOOTH TYPEWRITER (starts when subtitleVisible) -----
+  useEffect(() => {
+    if (!subtitleVisible) return;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      setTypedText(fullText.slice(0, index));
+      index++;
+      if (index > fullText.length) clearInterval(interval);
+    }, 45); // 45ms per character = smooth typing
+
+    return () => clearInterval(interval);
+  }, [subtitleVisible]);
 
   return (
-    <section
-      className="relative w-full h-48 sm:h-64 md:h-96 lg:h-[550px] xl:h-[700px] overflow-hidden"
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
-    >
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+    <section className="relative w-full h-screen overflow-hidden bg-black">
+      {/* ---------- 1. BACKGROUND ZOOM OUT (continues throughout all animations) ---------- */}
+      <div
+        className={`absolute inset-0 transition-transform duration-[4200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          zoomDone ? "scale-100" : "scale-[1.04]"
+        }`}
+        style={{
+          backgroundImage: isMobile ? "url('/hm.png')" : "url('/hc.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          willChange: "transform",
+        }}
+      />
+
+      {/* ---------- 2. GRADIENT OVERLAY (1.5 seconds fade-in) ---------- */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          gradientVisible ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.9) 100%)",
+          willChange: "opacity",
+        }}
+      />
+
+      {/* ---------- CONTENT LAYER ---------- */}
+      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto">
+        
+        {/* ---------- 3. TITLE (glides up 1.2 seconds) ---------- */}
+        <h1
+          className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            titleVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-8 opacity-0"
           }`}
         >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="absolute inset-0 bg-gradient-hero" />
-          </div>
+          <span className="text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] font-extrabold tracking-[-0.03em] whitespace-nowrap drop-shadow-2xl">
+            <span className="text-orange-500">Vamsi</span>{" "}
+            <span className="text-white">Packers</span>
+          </span>
+        </h1>
 
-          {/* Content */}
-          <div className="relative h-full w-full container mx-auto px-3 sm:px-4 md:px-6 flex items-center overflow-hidden">
-            <div className="max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl text-white">
-              <h1
-                className={`font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-2 sm:mb-4 md:mb-6 transition-all duration-700 leading-tight ${
-                  index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                {slide.title}
-              </h1>
-              <p
-                className={`font-body text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-3 sm:mb-4 md:mb-8 text-white/90 transition-all duration-700 line-clamp-2 sm:line-clamp-3 ${
-                  index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: "400ms" }}
-              >
-                {slide.subtitle}
-              </p>
-              <div
-                className={`transition-all duration-700 ${
-                  index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: "600ms" }}
-              >
-                <Button asChild size="sm" variant="hero" className="h-10 sm:h-11 md:h-12 lg:h-13 text-xs sm:text-sm md:text-base lg:text-base min-w-max">
-                  <Link to={slide.link}>{slide.cta}</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
-      <button
-        onClick={prevSlide}
-        className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all hover:scale-110 min-h-10 min-w-10 items-center justify-center focus:outline-none focus:ring-2 focus:ring-white/50"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all hover:scale-110 min-h-10 min-w-10 items-center justify-center focus:outline-none focus:ring-2 focus:ring-white/50"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
-
-      {/* Dots - Always visible and touch-friendly */}
-      <div className="absolute bottom-3 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`rounded-full transition-all min-h-2.5 min-w-2.5 sm:min-h-3 sm:min-w-3 focus:outline-none focus:ring-2 focus:ring-white/50 ${
-              index === currentSlide ? "bg-primary w-6 sm:w-8" : "bg-white/50 hover:bg-white/80"
+        {/* ---------- 4. SUBTITLE (typewriter effect) ---------- */}
+        <div className="relative mt-8 h-16 sm:h-20 md:h-24 flex items-center justify-center">
+          <p
+            className={`text-white/85 text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-wide transition-opacity duration-900 ${
+              subtitleVisible ? "opacity-100" : "opacity-0"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === currentSlide}
-          />
-        ))}
+          >
+            {typedText}
+            {subtitleVisible && typedText.length === fullText.length && (
+              <span className="ml-1 inline-block w-[2px] h-5 bg-white/70 animate-pulse" />
+            )}
+          </p>
+        </div>
+
+        {/* ---------- 5. BUTTONS (pop in with scale + fade) ---------- */}
+        <div
+          className={`mt-14 sm:mt-16 flex flex-col sm:flex-row gap-6 transition-all duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            buttonsVisible
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-4 opacity-0 scale-95"
+          }`}
+        >
+          <Button
+            asChild
+            className="relative bg-orange-500 hover:bg-orange-600 text-white px-12 py-6 text-sm sm:text-base uppercase tracking-[0.2em] font-medium border-0 transition-all duration-700 ease-out hover:scale-105 hover:shadow-[0_20px_30px_-10px_rgba(249,115,22,0.3)]"
+            style={{ borderRadius: 0 }}
+          >
+            <Link to="/services">
+              <span className="relative z-10">OUR SERVICES</span>
+              <span className="absolute inset-0 bg-white/0 hover:bg-white/10 transition-all duration-700" />
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            className="relative bg-transparent text-white px-12 py-6 text-sm sm:text-base uppercase tracking-[0.2em] font-medium border border-white/40 hover:border-white transition-all duration-700 ease-out hover:scale-105 hover:bg-white hover:text-black hover:shadow-[0_20px_30px_-10px_rgba(255,255,255,0.2)]"
+            style={{ borderRadius: 0 }}
+          >
+            <Link to="/contact">
+              <span className="relative z-10">GET QUOTE</span>
+              <span className="absolute inset-0 bg-white/0 hover:bg-white/5 transition-all duration-700" />
+            </Link>
+          </Button>
+        </div>
       </div>
+
+      {/* ---------- BOTTOM FADE (cinematic depth) ---------- */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
     </section>
   );
 };
 
-export default HeroCarousel;
+export default HeroSection;

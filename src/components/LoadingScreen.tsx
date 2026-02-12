@@ -6,53 +6,70 @@ type Props = {
   percent: number;
 };
 
-const sheets = [0, 1, 2];
-
-const layerStyles = (i: number) => {
-  // Slightly different opacity and height per layer
-  const heights = [100, 80, 60];
-  const opacities = [1, 0.92, 0.86];
-  return {
-    height: `${heights[i]}vh`,
-    opacity: opacities[i],
-  };
-};
-
 const LoadingScreen: React.FC<Props> = ({ visible, percent }) => {
+  const clampedPercent = Math.min(100, Math.max(0, percent));
+
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
-          key="loader-root"
+          key="loading-screen"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.45 } }}
-          className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto"
+          exit={{
+            opacity: 0,
+            scale: 0.96,
+            transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md"
         >
-          <div className="absolute inset-0 flex flex-col items-stretch justify-center overflow-hidden">
-            {sheets.map((i) => (
-              <motion.div
-                key={i}
-                initial={{ x: "-120%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "120%", opacity: 0 }}
-                transition={{ type: "tween", duration: 0.9, delay: i * 0.12, ease: "easeOut" }}
-                style={{
-                  background: `linear-gradient(90deg, rgba(255,255,255,${1 - i * 0.05}) 0%, #ff8a00 100%)`,
-                  ...layerStyles(i),
-                }}
-                className={`w-[200%] origin-left transform fixed left-0 -translate-x-0 rounded-b-2xl shadow-2xl`}
-              />
-            ))}
-          </div>
+          <div className="flex flex-col items-center justify-center px-6 text-center">
+            
+            {/* Logo – bigger, confident presence */}
+            <motion.img
+              src="/vamsi.png"
+              alt="Vamsi Packers and Movers"
+              initial={{ scale: 0.9, opacity: 0, y: 10 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="h-24 w-auto mb-6 drop-shadow-lg"
+            />
 
-          <div className="relative z-50 w-full max-w-2xl px-6 text-center">
-            <div className="mx-auto mb-4 flex items-center justify-center">
-              <div className="rounded-full bg-white/90 p-4 shadow-md">
-                <img src="/lorry.png" alt="lorry" className="h-12 w-auto" />
+            {/* Full brand name – smaller, refined */}
+            <motion.h1
+              initial={{ y: 8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-2xl sm:text-3xl md:text-4xl font-light tracking-[-0.02em] text-white"
+            >
+              <span className="text-orange-500 font-medium">Vamsi</span>{" "}
+              <span className="text-white/95">Packers and Movers</span>
+            </motion.h1>
+
+            {/* Progress – clean, thin, brand‑colored */}
+            <div className="w-64 sm:w-80 flex flex-col items-center gap-3 mt-8">
+              <div className="w-full h-[2px] bg-white/20 rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-orange-500 rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${clampedPercent}%` }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </div>
+
+              <motion.div
+                key={clampedPercent}
+                initial={{ opacity: 0.6, y: 2 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-white/70 text-xs sm:text-sm font-mono tracking-wider"
+              >
+                {clampedPercent}%
+              </motion.div>
+
+              <div className="text-white/40 text-[0.65rem] sm:text-xs uppercase tracking-[0.25em] mt-2">
+                preparing experience
               </div>
             </div>
-            <div className="text-sm text-foreground/90">Preparing experience — {percent}%</div>
           </div>
         </motion.div>
       )}

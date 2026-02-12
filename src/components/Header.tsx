@@ -53,15 +53,33 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <a
-            href="tel:+919247872222"
-            className="hidden md:flex items-center gap-1 lg:gap-2 text-primary font-body font-semibold text-xs lg:text-sm hover:text-green-500 transition-colors hover:scale-105 transform origin-right min-h-11 px-3"
-            aria-label="Call us"
-          >
-            <Phone className="w-4 h-4 flex-shrink-0" />
-            <span className="hidden xl:inline">+91 92478 72222</span>
-            <span className="xl:hidden">Call</span>
-          </a>
+         <div className="hidden md:flex items-center gap-3 lg:gap-4 text-primary font-body font-semibold text-xs lg:text-sm">
+
+  {/* First Number */}
+  <a
+    href="tel:+919247872222"
+    className="flex items-center gap-1 hover:text-green-500 transition-all hover:scale-105 transform origin-right"
+    aria-label="Call 9247872222"
+  >
+    <Phone className="w-4 h-4 flex-shrink-0" />
+    <span className="hidden xl:inline">+91 92478 72222</span>
+    <span className="xl:hidden">Call</span>
+  </a>
+
+  {/* Second Number */}
+  <a
+    href="tel:+919032616993"
+    className="flex items-center gap-1 hover:text-green-500 transition-all hover:scale-105 transform origin-right"
+    aria-label="Call 9032616993"
+  >
+    <Phone className="w-4 h-4 flex-shrink-0" />
+    <span className="hidden xl:inline">+91 9032616993</span>
+    <span className="xl:hidden">Call</span>
+  </a>
+
+</div>
+
+          
 
           {/* Mobile Menu Button */}
           <button
@@ -98,13 +116,31 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-4 sm:pt-6 border-t border-border mt-4 space-y-3">
-              <a
-                href="tel:+919247872222"
-                className="flex items-center gap-2 text-primary font-body font-semibold text-sm sm:text-base hover:text-green-500 transition-colors min-h-11 px-2 py-2"
-              >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                +91 92478 72222
-              </a>
+              <div className="hidden md:flex items-center gap-3 lg:gap-4 text-primary font-body font-semibold text-xs lg:text-sm">
+
+  {/* First Number */}
+  <a
+    href="tel:+919247872222"
+    className="flex items-center gap-1 hover:text-green-500 transition-all hover:scale-105 transform origin-right"
+    aria-label="Call 9247872222"
+  >
+    <Phone className="w-4 h-4 flex-shrink-0" />
+    <span className="hidden xl:inline">+91 92478 72222</span>
+    <span className="xl:hidden">Call</span>
+  </a>
+
+  {/* Second Number */}
+  <a
+    href="tel:+919032616993"
+    className="flex items-center gap-1 hover:text-green-500 transition-all hover:scale-105 transform origin-right"
+    aria-label="Call 9032616993"
+  >
+    <Phone className="w-4 h-4 flex-shrink-0" />
+    <span className="hidden xl:inline">+91 9032616993</span>
+    <span className="xl:hidden">Call</span>
+  </a>
+
+</div>
               <Button asChild className="w-full h-11 text-sm sm:text-base">
                 <Link to="/contact">Get Quote</Link>
               </Button>
