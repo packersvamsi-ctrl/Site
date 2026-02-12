@@ -76,25 +76,25 @@ const Index = () => {
       <HeroCarousel />
 
       {/* About Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start lg:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start lg:items-center">
             <Animated variant="fade-slide" className="order-2 lg:order-1" duration={0.7}>
               <SectionTitle
                 subtitle="About Us"
                 title="Your Trusted Partner for Safe Relocation"
                 centered={false}
               />
-              <p className="font-body text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+              <p className="font-body text-xs xs:text-xs sm:text-base text-muted-foreground mb-3 xs:mb-4 sm:mb-6">
                 "Vamsi packers and movers innovative spirit generates an attitude of continuing
                 development. The result is an organization focused upon Service, Quality and Trust"
               </p>
-              <p className="font-body text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">
+              <p className="font-body text-xs xs:text-xs sm:text-base text-muted-foreground mb-4 xs:mb-6 sm:mb-8">
                 We are one of the leading Packers & Movers of Household goods, office shifting, car,
                 furniture and machinery goods and removable services, having network in major cities
                 all over the India.
               </p>
-              <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm">
+              <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm min-h-11">
                 <Link to="/about">
                   Learn More <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                 </Link>
@@ -112,8 +112,8 @@ const Index = () => {
                   }}
                 />
               </div>
-              <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-3 sm:-left-6 md:-left-6 bg-primary text-primary-foreground p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-lg">
-                <p className="font-heading font-bold text-xl sm:text-2xl md:text-3xl">30+</p>
+              <div className="absolute -bottom-3 xs:-bottom-4 sm:-bottom-6 md:-bottom-8 -left-2 xs:-left-3 sm:-left-6 bg-primary text-primary-foreground p-2 xs:p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-lg">
+                <p className="font-heading font-bold text-base xs:text-lg sm:text-2xl md:text-3xl">30+</p>
                 <p className="font-subtitle text-xs sm:text-sm">Years of Excellence</p>
               </div>
             </Animated>
@@ -122,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <Animated variant="fade-slide" duration={0.65}>
             <SectionTitle
@@ -131,7 +131,7 @@ const Index = () => {
               description="From packing to delivery, we handle every aspect of your relocation with care and precision."
             />
           </Animated>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {services.map((service) => (
               <Animated 
                 key={service.title} 
@@ -143,9 +143,9 @@ const Index = () => {
               </Animated>
             ))}
           </div>
-          <div className="text-center mt-8 sm:mt-10 md:mt-12">
+          <div className="text-center mt-6 xs:mt-8 sm:mt-10 md:mt-12">
             <Animated variant="scale-pop" duration={0.65}>
-              <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base">
+              <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11">
                 <Link to="/services">
                   View All Services <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                 </Link>
@@ -156,10 +156,10 @@ const Index = () => {
       </section>
 
       {/* Video Showcase Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-8 xs:space-y-10 sm:space-y-12">
           {/* Row 1 — video from left */}
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
             <Animated variant="slide-directional" direction="left" className="md:w-1/2 w-full" duration={0.8}>
               <video
                 src="/house.mp4"
@@ -170,13 +170,13 @@ const Index = () => {
                 preload="auto"
                 controlsList="nodownload"
                 webkit-playsinline="true"
-                className="w-full h-auto rounded-lg shadow-lg bg-black"
+                className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg bg-black"
                 onError={(e) => console.error('Video error:', e)}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Household & Office Packing</h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
+              <h3 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl mb-2 xs:mb-3 sm:mb-4">Household & Office Packing</h3>
+              <p className="text-xs xs:text-xs sm:text-base text-muted-foreground">
                 Specialist packing and transport for homes and offices — room-by-room packing with
                 premium materials, custom crating for fragile items, secure loading and transport,
                 and careful delivery. We handle furniture, electronics, and valuables with care to
@@ -186,7 +186,7 @@ const Index = () => {
           </div>
 
           {/* Row 2 — video from right */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-12">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
             <Animated variant="slide-directional" direction="right" className="md:w-1/2 w-full" duration={0.8}>
               <video
                 src="/car.mp4"
@@ -197,13 +197,13 @@ const Index = () => {
                 preload="auto"
                 controlsList="nodownload"
                 webkit-playsinline="true"
-                className="w-full h-auto rounded-lg shadow-lg bg-black"
+                className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg bg-black"
                 onError={(e) => console.error('Video error:', e)}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Vehicle Packing & Transport</h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
+              <h3 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl mb-2 xs:mb-3 sm:mb-4">Vehicle Packing & Transport</h3>
+              <p className="text-xs xs:text-xs sm:text-base text-muted-foreground">
                 Specialized solutions for cars and bikes — secure cradles, fuel-safe procedures,
                 covered transport, and door-to-door handling. We perform inspections, offer
                 optional insurance, and use expert loading techniques to protect vehicles in transit.
@@ -214,9 +214,9 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-8 sm:py-12 md:py-16 bg-secondary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 bg-secondary">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat) => (
               <Animated 
                 key={stat.label} 
@@ -225,8 +225,8 @@ const Index = () => {
                 threshold={0.3}
               >
                 <div className="text-center">
-                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                  <p className="font-heading font-bold text-lg sm:text-2xl md:text-3xl text-secondary-foreground">
+                  <stat.icon className="w-5 xs:w-6 sm:w-8 md:w-10 h-5 xs:h-6 sm:h-8 md:h-10 text-primary mx-auto mb-1 xs:mb-2 sm:mb-3 md:mb-4" />
+                  <p className="font-heading font-bold text-base xs:text-lg sm:text-2xl md:text-3xl text-secondary-foreground">
                     {stat.value}
                   </p>
                   <p className="font-subtitle text-xs sm:text-sm text-secondary-foreground/70">{stat.label}</p>
@@ -238,9 +238,9 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start">
             <Animated variant="mask-reveal" className="order-2 lg:order-1" duration={0.85}>
               <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-slate-800 to-slate-900">
                 <img
@@ -256,16 +256,16 @@ const Index = () => {
             </Animated>
             <Animated variant="fade-slide" className="order-1 lg:order-2" duration={0.7}>
               <SectionTitle subtitle="Why Choose Us" title="What Sets Us Apart" centered={false} />
-              <ul className="space-y-3 sm:space-y-4">
+              <ul className="space-y-2 xs:space-y-2.5 sm:space-y-3 md:space-y-4">
                 {whyUs.map((item) => (
-                  <li key={item} className="flex items-start gap-2 sm:gap-3">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="font-body text-sm sm:text-base text-muted-foreground">{item}</span>
+                  <li key={item} className="flex items-start gap-2 xs:gap-2.5 sm:gap-3 min-h-10">
+                    <CheckCircle className="w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="font-body text-xs xs:text-xs sm:text-base text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 sm:mt-8">
-                <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base">
+              <div className="mt-4 xs:mt-6 sm:mt-8">
+                <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11">
                   <Link to="/contact">Get Free Quote</Link>
                 </Button>
               </div>
@@ -275,27 +275,27 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <Animated variant="blur-focus" duration={0.8}>
-            <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6">
+            <h2 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-2 xs:mb-3 sm:mb-4 md:mb-6">
               Ready to Move?
             </h2>
           </Animated>
           <Animated variant="fade-slide" duration={0.7}>
-            <p className="font-body text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-6 sm:mb-8">
+            <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-4 xs:mb-6 sm:mb-8">
               Get a free quote today and experience hassle-free relocation with Vamsi Packers and
               Movers.
             </p>
           </Animated>
           <Animated variant="scale-pop" duration={0.7}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" variant="secondary">
+            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center">
+              <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11" variant="secondary">
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
               <Button
                 asChild
-                className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base"
+                className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11"
                 variant="outline"
               >
                 <a href="tel:+919247872222">Call Now: +91 92478 72222</a>

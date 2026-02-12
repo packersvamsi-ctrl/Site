@@ -118,16 +118,16 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
+      <section className="relative py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-secondary">
         <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
+            <span className="font-subtitle text-xs xs:text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Our Services
             </span>
-            <h1 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 text-secondary-foreground leading-tight">
+            <h1 className="font-heading font-bold text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 xs:mt-2.5 sm:mt-3 md:mt-4 text-secondary-foreground leading-tight">
               Complete Moving Solutions
             </h1>
-            <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg text-secondary-foreground/80 mt-4 sm:mt-5 md:mt-6">
+            <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg text-secondary-foreground/80 mt-3 xs:mt-3.5 sm:mt-4 md:mt-5 lg:mt-6">
               From packing to delivery, we provide comprehensive relocation services tailored to your
               needs.
             </p>
@@ -136,35 +136,35 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
+          <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
             {services.map((service, index) => (
               <Animated
                 key={service.title}
                 variant={index % 2 === 0 ? "glide" : "pop"}
                 direction={index % 2 === 0 ? "left" : "right"}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-10 lg:gap-12 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : "order-2 lg:order-1"}>
-                  <div className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-5 md:mb-6">
-                    <service.icon className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-primary" />
+                  <div className="w-10 xs:w-12 sm:w-14 md:w-16 h-10 xs:h-12 sm:h-14 md:h-16 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 xs:mb-4 sm:mb-5 md:mb-6">
+                    <service.icon className="w-5 xs:w-6 sm:w-7 md:w-8 h-5 xs:h-6 sm:h-7 md:h-8 text-primary" />
                   </div>
-                  <h2 className="font-heading font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-3 sm:mb-4 text-foreground leading-tight">
+                  <h2 className="font-heading font-bold text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2 xs:mb-3 sm:mb-4 text-foreground leading-tight">
                     {service.title}
                   </h2>
-                  <p className="font-body text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-6">{service.description}</p>
-                  <ul className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base text-muted-foreground mb-3 xs:mb-4 sm:mb-6">{service.description}</p>
+                  <ul className="grid grid-cols-2 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 mb-4 xs:mb-6 sm:mb-8">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
-                        <span className="font-body text-xs sm:text-sm text-muted-foreground">{feature}</span>
+                      <li key={feature} className="flex items-center gap-1.5 xs:gap-2 min-h-10">
+                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+                        <span className="font-body text-xs xs:text-xs sm:text-sm text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base">
+                  <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11">
                     <Link to="/contact">
                       Get Quote <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                     </Link>
@@ -187,22 +187,22 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6 leading-tight">
+          <h2 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-2 xs:mb-3 sm:mb-4 md:mb-6 leading-tight">
             Need a Custom Solution?
           </h2>
-          <p className="font-body text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-6 sm:mb-8">
+          <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-4 xs:mb-6 sm:mb-8">
             Contact us to discuss your specific requirements. We offer customized solutions for all
             your packing and moving needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" variant="secondary">
+          <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center">
+            <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11" variant="secondary">
               <Link to="/contact">Get Free Quote</Link>
             </Button>
             <Button
               asChild
-              className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base"
+              className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11"
               variant="outline"
             >
               <a href="tel:+919247872222">Call: +91 92478 72222</a>

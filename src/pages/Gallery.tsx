@@ -73,16 +73,16 @@ const Gallery = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary">
+      <section className="relative py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-secondary">
         <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="font-subtitle text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
+            <span className="font-subtitle text-xs xs:text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Our Work
             </span>
-            <h1 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 text-secondary-foreground leading-tight">
+            <h1 className="font-heading font-bold text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 xs:mt-2.5 sm:mt-3 md:mt-4 text-secondary-foreground leading-tight">
               Gallery
             </h1>
-            <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg text-secondary-foreground/80 mt-4 sm:mt-5 md:mt-6">
+            <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg text-secondary-foreground/80 mt-3 xs:mt-3.5 sm:mt-4 md:mt-5 lg:mt-6">
               Take a look at our previous work and see how we handle relocations with care and
               professionalism.
             </p>
@@ -91,15 +91,14 @@ const Gallery = () => {
       </section>
 
       {/* Filter Buttons */}
-      <section className="py-6 sm:py-8 md:py-10 bg-background border-b border-border">
+      <section className="py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 bg-background border-b border-border">
         <Animated variant="fade" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
-                className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-body text-xs sm:text-sm md:text-base font-medium transition-all whitespace-nowrap min-h-10 ${
-                  filter === category
+                className={`px-3 xs:px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-body text-xs xs:text-xs sm:text-sm md:text-base font-medium transition-all whitespace-nowrap min-h-10 ${ filter === category
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground hover:bg-muted-foreground/20"
                 }`}
@@ -112,13 +111,13 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-background">
+      <section className="py-6 xs:py-8 sm:py-10 md:py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1 xs:gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-6">
             {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative aspect-square rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
+                className="group relative aspect-square rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 min-h-[80px] xs:min-h-[100px] sm:min-h-[150px]"
                 onClick={() => setSelectedImage(image.src)}
                 role="button"
                 tabIndex={0}
@@ -136,11 +135,11 @@ const Gallery = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end">
-                  <div className="p-2 sm:p-3 md:p-4">
-                    <span className="font-subtitle text-xs text-white/90 uppercase tracking-wider line-clamp-1">
+                  <div className="p-1.5 xs:p-2 sm:p-3 md:p-4">
+                    <span className="font-subtitle text-[10px] xs:text-xs text-white/90 uppercase tracking-wider line-clamp-1">
                       {image.category}
                     </span>
-                    <p className="font-body text-white text-xs sm:text-sm mt-0.5 sm:mt-1 line-clamp-2">{image.alt}</p>
+                    <p className="font-body text-white text-[10px] xs:text-xs sm:text-sm mt-0.5 line-clamp-2">{image.alt}</p>
                   </div>
                 </div>
               </div>
@@ -152,20 +151,20 @@ const Gallery = () => {
       {/* Lightbox */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-3 sm:p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-1.5 xs:p-2 sm:p-3 md:p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 text-white hover:text-primary transition-colors min-h-10 min-w-10 flex items-center justify-center z-51"
+            className="absolute top-2 xs:top-2.5 sm:top-3 md:top-4 lg:top-6 right-2 xs:right-2.5 sm:right-3 md:right-4 lg:right-6 text-white hover:text-primary transition-colors min-h-10 min-w-10 flex items-center justify-center z-51"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >
-            <X className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            <X className="w-5 xs:w-6 sm:w-7 md:w-8 h-5 xs:h-6 sm:h-7 md:h-8" />
           </button>
           <img
             src={selectedImage}
             alt="Gallery lightbox"
-            className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            className="max-w-full max-h-[85vh] sm:max-h-[90vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
             onError={(e) => {
               e.currentTarget.src = "/banners/banner-1.jpg";
@@ -175,15 +174,15 @@ const Gallery = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-8 sm:py-12 md:py-16 bg-primary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 bg-primary">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6 leading-tight">
+          <h2 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-2 xs:mb-3 sm:mb-4 md:mb-6 leading-tight">
             Ready to Make Your Move?
           </h2>
-          <p className="font-body text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-xl mx-auto mb-6 sm:mb-8">
+          <p className="font-body text-xs xs:text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-xl mx-auto mb-4 xs:mb-6 sm:mb-8">
             Join thousands of satisfied customers who trusted us with their relocation.
           </p>
-          <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" variant="secondary">
+          <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11" variant="secondary">
             <Link to="/contact">Get Free Quote</Link>
           </Button>
         </div>

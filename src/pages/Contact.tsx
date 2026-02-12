@@ -94,15 +94,15 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
             {/* Contact Form */}
-            <div className="bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-card">
-              <h2 className="font-heading font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6 text-card-foreground">
+            <div className="bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-card">
+              <h2 className="font-heading font-semibold text-lg xs:text-lg sm:text-xl md:text-2xl mb-3 xs:mb-4 sm:mb-5 md:mb-6 text-card-foreground">
                 Send us a Message
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-3 xs:space-y-3.5 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 <div>
                   <label htmlFor="name" className="font-body text-xs sm:text-sm font-medium text-foreground block mb-1.5 sm:mb-2">
                     Full Name *
@@ -117,7 +117,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4">
                   <div>
                     <label htmlFor="email" className="font-body text-xs sm:text-sm font-medium text-foreground block mb-1.5 sm:mb-2">
                       Email Address *
@@ -164,7 +164,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" disabled={isSubmitting}>
+                <Button type="submit" className="w-full h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11" disabled={isSubmitting}>
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
@@ -178,25 +178,25 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div>
-              <h2 className="font-heading font-semibold text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6 text-foreground">
+              <h2 className="font-heading font-semibold text-lg xs:text-lg sm:text-xl md:text-2xl mb-3 xs:mb-4 sm:mb-5 md:mb-6 text-foreground">
                 Contact Information
               </h2>
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-6 sm:mb-8 md:mb-10">
+              <div className="space-y-3 xs:space-y-3.5 sm:space-y-4 md:space-y-5 lg:space-y-6 mb-4 xs:mb-6 sm:mb-8 md:mb-10">
                 {contactInfo.map((info) => (
-                  <div key={info.title} className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <div key={info.title} className="flex items-start gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 min-h-10">
+                    <div className="w-10 xs:w-10 sm:w-11 md:w-12 h-10 xs:h-10 sm:h-11 md:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-4 xs:w-4 sm:w-5 md:w-6 h-4 xs:h-4 sm:h-5 md:h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-semibold text-sm sm:text-base text-foreground">{info.title}</h3>
-                      <div className="font-body text-xs sm:text-sm text-muted-foreground mt-0.5 sm:mt-1">{info.content}</div>
+                      <h3 className="font-heading font-semibold text-xs xs:text-sm sm:text-base text-foreground">{info.title}</h3>
+                      <div className="font-body text-xs xs:text-xs sm:text-sm text-muted-foreground mt-0.5 sm:mt-1">{info.content}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Map */}
-              <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card h-48 sm:h-64 md:h-80 w-full">
+              <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card h-36 xs:h-40 sm:h-48 md:h-64 lg:h-80 w-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.5!2d83.3!3d17.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
                   width="100%"
