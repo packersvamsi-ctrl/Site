@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-16">
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
 
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -140,7 +140,7 @@ const Footer = () => {
           </div>
 
           {/* Maps */}
-          <div className="sm:col-span-2 md:col-span-1">
+          <div className="md:col-span-1">
             <h4 className="font-heading font-semibold text-sm xs:text-sm sm:text-lg mb-4 xs:mb-5 sm:mb-6">
               Maps Location
             </h4>
