@@ -20,7 +20,7 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-secondary">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs xs:text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               About Us
@@ -38,7 +38,7 @@ const About = () => {
 
       {/* About Content */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <SectionTitle subtitle="Our Story" title="Welcome to Vamsi Packers and Movers" centered={false} />
@@ -97,7 +97,7 @@ const About = () => {
 
       {/* Vision & Mission */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 xs:gap-4 sm:gap-6 md:gap-8">
             {/* Vision */}
             <div className="bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-3 xs:p-4 sm:p-6 md:p-8 shadow-card">
@@ -138,7 +138,7 @@ const About = () => {
 
       {/* Why Choose Us */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <SectionTitle
             subtitle="Why Us?"
             title="What Makes Us Different"
@@ -163,7 +163,7 @@ const About = () => {
 
       {/* Values */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-secondary">
-        <Animated variant="pop" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+        <Animated variant="scale-pop" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <SectionTitle
             subtitle="Our Values"
             title="Service, Quality & Trust"

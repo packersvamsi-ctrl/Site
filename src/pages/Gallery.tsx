@@ -74,7 +74,7 @@ const Gallery = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-secondary">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-subtitle text-xs xs:text-xs sm:text-sm uppercase tracking-wider text-primary font-semibold">
               Our Work
@@ -92,7 +92,7 @@ const Gallery = () => {
 
       {/* Filter Buttons */}
       <section className="py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 bg-background border-b border-border">
-        <Animated variant="fade" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <Animated variant="fade-slide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {categories.map((category) => (
               <button
