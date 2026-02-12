@@ -58,6 +58,10 @@ const HeroSection = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black">
       {/* ---------- 1. BACKGROUND ZOOM OUT (continues throughout all animations) ---------- */}
+      {/* Fallback solid background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-black" />
+      
+      {/* Banner image with fallback */}
       <div
         className={`absolute inset-0 transition-transform duration-[4200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
           zoomDone ? "scale-100" : "scale-[1.04]"
@@ -66,7 +70,9 @@ const HeroSection = () => {
           backgroundImage: isMobile ? "url('/hm.png')" : "url('/hc.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           willChange: "transform",
+          backgroundColor: "#1e293b",
         }}
       />
 

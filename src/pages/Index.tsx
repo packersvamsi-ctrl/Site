@@ -77,9 +77,9 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start lg:items-center">
-            <div className="order-2 lg:order-1">
+            <Animated variant="fade-slide" className="order-2 lg:order-1" duration={0.7}>
               <SectionTitle
                 subtitle="About Us"
                 title="Your Trusted Partner for Safe Relocation"
@@ -99,8 +99,8 @@ const Index = () => {
                   Learn More <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                 </Link>
               </Button>
-            </div>
-            <div className="order-1 lg:order-2 relative">
+            </Animated>
+            <Animated variant="ken-burns" className="order-1 lg:order-2 relative" duration={1.0}>
               <div className="aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover">
                 <img
                   src="/banners/banner-3.jpg"
@@ -113,40 +113,51 @@ const Index = () => {
                 <p className="font-heading font-bold text-xl sm:text-2xl md:text-3xl">30+</p>
                 <p className="font-subtitle text-xs sm:text-sm">Years of Excellence</p>
               </div>
-            </div>
+            </Animated>
           </div>
-        </Animated>
+        </div>
       </section>
 
       {/* Services Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Our Services"
-            title="Complete Moving Solutions"
-            description="From packing to delivery, we handle every aspect of your relocation with care and precision."
-          />
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <Animated variant="fade-slide" duration={0.65}>
+            <SectionTitle
+              subtitle="Our Services"
+              title="Complete Moving Solutions"
+              description="From packing to delivery, we handle every aspect of your relocation with care and precision."
+            />
+          </Animated>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+              <Animated 
+                key={service.title} 
+                variant="scale-pop"
+                duration={0.6}
+                threshold={0.2}
+              >
+                <ServiceCard {...service} />
+              </Animated>
             ))}
           </div>
           <div className="text-center mt-8 sm:mt-10 md:mt-12">
-            <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base">
-              <Link to="/services">
-                View All Services <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
-              </Link>
-            </Button>
+            <Animated variant="scale-pop" duration={0.65}>
+              <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base">
+                <Link to="/services">
+                  View All Services <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
+                </Link>
+              </Button>
+            </Animated>
           </div>
-        </Animated>
+        </div>
       </section>
 
       {/* Video Showcase Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
-          {/* Row 1 — video left on desktop, video first on mobile */}
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-12">
+          {/* Row 1 — video from left */}
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <div className="md:w-1/2 w-full">
+            <Animated variant="slide-directional" direction="left" className="md:w-1/2 w-full" duration={0.8}>
               <video
                 src="/house.mp4"
                 playsInline
@@ -156,8 +167,8 @@ const Index = () => {
                 preload="metadata"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-            </div>
-            <div className="md:w-1/2 w-full">
+            </Animated>
+            <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
               <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Household & Office Packing</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
                 Specialist packing and transport for homes and offices — room-by-room packing with
@@ -165,12 +176,12 @@ const Index = () => {
                 and careful delivery. We handle furniture, electronics, and valuables with care to
                 ensure they arrive intact.
               </p>
-            </div>
+            </Animated>
           </div>
 
-          {/* Row 2 — video right on desktop, video first on mobile */}
+          {/* Row 2 — video from right */}
           <div className="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-12">
-            <div className="md:w-1/2 w-full">
+            <Animated variant="slide-directional" direction="right" className="md:w-1/2 w-full" duration={0.8}>
               <video
                 src="/car.mp4"
                 playsInline
@@ -180,41 +191,48 @@ const Index = () => {
                 preload="metadata"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-            </div>
-            <div className="md:w-1/2 w-full">
+            </Animated>
+            <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
               <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3">Vehicle Packing & Transport</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
                 Specialized solutions for cars and bikes — secure cradles, fuel-safe procedures,
                 covered transport, and door-to-door handling. We perform inspections, offer
                 optional insurance, and use expert loading techniques to protect vehicles in transit.
               </p>
-            </div>
+            </Animated>
           </div>
-        </Animated>
+        </div>
       </section>
 
       {/* Stats Section */}
       <section className="py-8 sm:py-12 md:py-16 bg-secondary">
-        <Animated variant="fade" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                <p className="font-heading font-bold text-lg sm:text-2xl md:text-3xl text-secondary-foreground">
-                  {stat.value}
-                </p>
-                <p className="font-subtitle text-xs sm:text-sm text-secondary-foreground/70">{stat.label}</p>
-              </div>
+              <Animated 
+                key={stat.label} 
+                variant="scale-pop"
+                duration={0.65}
+                threshold={0.3}
+              >
+                <div className="text-center">
+                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary mx-auto mb-2 sm:mb-3 md:mb-4" />
+                  <p className="font-heading font-bold text-lg sm:text-2xl md:text-3xl text-secondary-foreground">
+                    {stat.value}
+                  </p>
+                  <p className="font-subtitle text-xs sm:text-sm text-secondary-foreground/70">{stat.label}</p>
+                </div>
+              </Animated>
             ))}
           </div>
-        </Animated>
+        </div>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <Animated variant="glide" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
-            <div className="order-2 lg:order-1">
+            <Animated variant="mask-reveal" className="order-2 lg:order-1" duration={0.85}>
               <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover">
                 <img
                   src="/banners/banner-1.jpg"
@@ -223,8 +241,8 @@ const Index = () => {
                   loading="lazy"
                 />
               </div>
-            </div>
-            <div className="order-1 lg:order-2">
+            </Animated>
+            <Animated variant="fade-slide" className="order-1 lg:order-2" duration={0.7}>
               <SectionTitle subtitle="Why Choose Us" title="What Sets Us Apart" centered={false} />
               <ul className="space-y-3 sm:space-y-4">
                 {whyUs.map((item) => (
@@ -239,34 +257,40 @@ const Index = () => {
                   <Link to="/contact">Get Free Quote</Link>
                 </Button>
               </div>
-            </div>
+            </Animated>
           </div>
-        </Animated>
+        </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
-        <Animated variant="pop" className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6">
-            Ready to Move?
-          </h2>
-          <p className="font-body text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-6 sm:mb-8">
-            Get a free quote today and experience hassle-free relocation with Vamsi Packers and
-            Movers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" variant="secondary">
-              <Link to="/contact">Get Free Quote</Link>
-            </Button>
-            <Button
-              asChild
-              className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base"
-              variant="outline"
-            >
-              <a href="tel:+919247872222">Call Now: +91 92478 72222</a>
-            </Button>
-          </div>
-        </Animated>
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+          <Animated variant="blur-focus" duration={0.8}>
+            <h2 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-3 sm:mb-4 md:mb-6">
+              Ready to Move?
+            </h2>
+          </Animated>
+          <Animated variant="fade-slide" duration={0.7}>
+            <p className="font-body text-xs sm:text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto mb-6 sm:mb-8">
+              Get a free quote today and experience hassle-free relocation with Vamsi Packers and
+              Movers.
+            </p>
+          </Animated>
+          <Animated variant="scale-pop" duration={0.7}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button asChild className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base" variant="secondary">
+                <Link to="/contact">Get Free Quote</Link>
+              </Button>
+              <Button
+                asChild
+                className="h-10 sm:h-11 md:h-12 text-xs sm:text-sm md:text-base"
+                variant="outline"
+              >
+                <a href="tel:+919247872222">Call Now: +91 92478 72222</a>
+              </Button>
+            </div>
+          </Animated>
+        </div>
       </section>
     </Layout>
   );

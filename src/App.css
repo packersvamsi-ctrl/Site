@@ -15,6 +15,33 @@ body {
   overflow-x: hidden;
 }
 
+/* Preload hero banner images to ensure they load quickly */
+@media (min-width: 769px) {
+  body::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-image: url('/hc.png');
+    background-size: cover;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-image: url('/hm.png');
+    background-size: cover;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
 /* Prevent horizontal scrolling on mobile */
 * {
   box-sizing: border-box;
