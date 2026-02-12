@@ -250,6 +250,7 @@ const Index = () => {
                   loading="lazy"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
+                    (e.target as HTMLImageElement).parentElement!.style.backgroundColor = '#1e293b';
                   }}
                 />
               </div>
