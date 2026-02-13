@@ -89,7 +89,7 @@ const HeroSection = () => {
       />
 
       {/* ---------- CONTENT LAYER ---------- */}
-      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto w-full overflow-x-hidden">
         
         {/* ---------- 3. TITLE (glides up 1.2 seconds) ---------- */}
         <h1

@@ -76,7 +76,7 @@ const Index = () => {
       <HeroCarousel />
 
       {/* About Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start lg:items-center">
             <Animated variant="fade-slide" className="order-2 lg:order-1" duration={0.7}>
@@ -122,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-muted">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <Animated variant="fade-slide" duration={0.65}>
             <SectionTitle
@@ -156,7 +156,7 @@ const Index = () => {
       </section>
 
       {/* Video Showcase Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 space-y-8 xs:space-y-10 sm:space-y-12">
           {/* Row 1 — video from left */}
           <div className="flex flex-col md:flex-row items-center gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
@@ -224,7 +224,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 bg-secondary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 bg-secondary overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat) => (
@@ -248,10 +248,10 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start">
-            <Animated variant="mask-reveal" className="order-2 lg:order-1" duration={0.85}>
+            <Animated variant="scale-pop" className="order-2 lg:order-1" duration={0.85}>
               <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-slate-800 to-slate-900">
                 <img
                   src="/banners/banner-1.jpg"
@@ -292,7 +292,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
+      <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-primary overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <Animated variant="blur-focus" duration={0.8}>
             <h2 className="font-heading font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-foreground mb-2 xs:mb-3 sm:mb-4 md:mb-6">
