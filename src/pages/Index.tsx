@@ -167,11 +167,16 @@ const Index = () => {
                 muted
                 autoPlay
                 loop
-                preload="auto"
+                preload="metadata"
                 controlsList="nodownload"
                 webkit-playsinline="true"
                 className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg bg-black"
-                onError={(e) => console.error('Video error:', e)}
+                onLoadedMetadata={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.play().catch(() => {
+                    console.log('Auto-play prevented, user interaction required');
+                  });
+                }}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
@@ -194,11 +199,16 @@ const Index = () => {
                 muted
                 autoPlay
                 loop
-                preload="auto"
+                preload="metadata"
                 controlsList="nodownload"
                 webkit-playsinline="true"
                 className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg bg-black"
-                onError={(e) => console.error('Video error:', e)}
+                onLoadedMetadata={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.play().catch(() => {
+                    console.log('Auto-play prevented, user interaction required');
+                  });
+                }}
               />
             </Animated>
             <Animated variant="blur-focus" className="md:w-1/2 w-full" duration={0.75}>
@@ -247,10 +257,16 @@ const Index = () => {
                   src="/banners/banner-1.jpg"
                   alt="Professional moving team"
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  onLoad={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'block';
+                  }}
                   onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.style.backgroundColor = '#1e293b';
+                    const img = e.target as HTMLImageElement;
+                    img.style.display = 'none';
+                    if (img.parentElement) {
+                      img.parentElement.style.backgroundColor = '#1e293b';
+                    }
                   }}
                 />
               </div>
