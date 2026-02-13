@@ -101,7 +101,7 @@ const HeroSection = () => {
         >
           <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] 2xl:text-[7.5rem] font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] drop-shadow-2xl leading-tight sm:leading-tight">
             <span className="text-orange-500">Vamsi</span>{" "}
-            <span className="text-white">Packers</span>
+            <span className="text-white">Packers & Movers</span>
           </span>
         </h1>
 
