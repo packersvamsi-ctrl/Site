@@ -3,38 +3,51 @@ import { motion, useInView, Variants } from "framer-motion";
 
 type Props = {
   children: React.ReactNode;
-  variant?: "fade-slide" | "ken-burns" | "mask-reveal" | "blur-focus" | "stagger-grid" | "parallax" | "scale-pop" | "slide-directional";
+  variant?:
+    | "fade-slide"
+    | "ken-burns"
+    | "mask-reveal"
+    | "blur-focus"
+    | "parallax"
+    | "scale-pop"
+    | "slide-directional";
   direction?: "left" | "right" | "up" | "down";
   className?: string;
   threshold?: number;
   duration?: number;
-  staggerDelay?: number;
+  once?: boolean; // 👈 new
 };
 
-const makeVariants = (variant: Props["variant"], direction: Props["direction"], duration: number): Variants => {
-  // 1. Subtle Fade + Slide Up
+const makeVariants = (
+  variant: Props["variant"],
+  direction: Props["direction"],
+  duration: number
+): Variants => {
+  const baseEase = [0.25, 0.46, 0.45, 0.94];
+
+  // 1️⃣ Fade + Slide
   const fadeSlide: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration, ease: [0.25, 0.46, 0.45, 0.94] },
+      transition: { duration, ease: baseEase },
     },
   };
 
-  // 2. Cinematic Ken Burns (Slow Zoom)
+  // 2️⃣ Ken Burns
   const kenBurns: Variants = {
     hidden: { scale: 1.05, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: duration + 0.5, ease: "easeOut" },
+      transition: { duration: duration + 0.4, ease: "easeOut" },
     },
   };
 
-  // 3. Smooth Mask Reveal
+  // 3️⃣ Mask Reveal
   const maskReveal: Variants = {
-    hidden: { 
+    hidden: {
       clipPath: "inset(0% 100% 0% 0%)",
       opacity: 0,
     },
@@ -45,12 +58,9 @@ const makeVariants = (variant: Props["variant"], direction: Props["direction"], 
     },
   };
 
-  // 4. Blur-to-Focus Fade In
+  // 4️⃣ Blur Focus
   const blurFocus: Variants = {
-    hidden: { 
-      opacity: 0, 
-      filter: "blur(15px)" 
-    },
+    hidden: { opacity: 0, filter: "blur(15px)" },
     visible: {
       opacity: 1,
       filter: "blur(0px)",
@@ -58,29 +68,17 @@ const makeVariants = (variant: Props["variant"], direction: Props["direction"], 
     },
   };
 
-  // 5. Staggered Grid Reveal (parent)
-  const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  // 6. Gentle Parallax Scroll effect
+  // 5️⃣ Parallax Feel
   const parallax: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: duration + 0.25, ease: "easeOut" },
+      transition: { duration: duration + 0.2, ease: "easeOut" },
     },
   };
 
-  // 7. Soft Scale-In Pop
+  // 6️⃣ Soft Scale Pop
   const scalePop: Variants = {
     hidden: { scale: 0.92, opacity: 0 },
     visible: {
@@ -88,41 +86,53 @@ const makeVariants = (variant: Props["variant"], direction: Props["direction"], 
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 15,
+        stiffness: 90,
+        damping: 14,
         duration,
       },
     },
   };
 
-  // 8. Directional Slide-In
-  const slideDirectional = (dir: string): Variants => {
-    let xVal = 60;
-    if (dir === "right") xVal = -60;
-    
+  // 7️⃣ Proper Directional Slide (FULL SUPPORT)
+  const slideDirectional = (): Variants => {
+    let x = 0;
+    let y = 0;
+
+    if (direction === "left") x = -60;
+    if (direction === "right") x = 60;
+    if (direction === "up") y = -60;
+    if (direction === "down") y = 60;
+
     return {
-      hidden: { x: xVal, opacity: 0 },
+      hidden: { x, y, opacity: 0 },
       visible: {
         x: 0,
+        y: 0,
         opacity: 1,
         transition: { duration, ease: "easeOut" },
       },
     };
   };
 
-  if (variant === "fade-slide") return fadeSlide;
-  if (variant === "ken-burns") return kenBurns;
-  if (variant === "mask-reveal") return maskReveal;
-  if (variant === "blur-focus") return blurFocus;
-  if (variant === "stagger-grid") return staggerContainer;
-  if (variant === "parallax") return parallax;
-  if (variant === "scale-pop") return scalePop;
-  if (variant === "slide-directional") return slideDirectional(direction || "left");
-  
-  return fadeSlide;
+  switch (variant) {
+    case "ken-burns":
+      return kenBurns;
+    case "mask-reveal":
+      return maskReveal;
+    case "blur-focus":
+      return blurFocus;
+    case "parallax":
+      return parallax;
+    case "scale-pop":
+      return scalePop;
+    case "slide-directional":
+      return slideDirectional();
+    default:
+      return fadeSlide;
+  }
 };
 
-// For staggered grid items
+// Grid Item Animation
 const staggerItem: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -144,10 +154,18 @@ const Animated: React.FC<AnimatedProps> = ({
   threshold = 0.15,
   duration = 0.65,
   isGridItem = false,
+  once = true, // 👈 default animate once
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { margin: "0px", amount: threshold });
-  const variants = isGridItem ? staggerItem : makeVariants(variant, direction, duration);
+
+  const inView = useInView(ref, {
+    amount: threshold,
+    once,
+  });
+
+  const variants = isGridItem
+    ? staggerItem
+    : makeVariants(variant, direction, duration);
 
   return (
     <motion.div
@@ -162,30 +180,34 @@ const Animated: React.FC<AnimatedProps> = ({
   );
 };
 
-// Container component for stagger grid animations
+// 🔥 Stagger Container (Cleaner Version)
 export const AnimatedContainer: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className }) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { margin: "0px", amount: 0.15 });
+
+  const inView = useInView(ref, {
+    amount: 0.15,
+    once: true,
+  });
 
   return (
     <motion.div
       ref={ref}
       className={className}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
       variants={{
         hidden: { opacity: 0 },
         visible: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.12,
             delayChildren: 0.1,
           },
         },
       }}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
     >
       {children}
     </motion.div>

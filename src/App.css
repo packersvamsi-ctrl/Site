@@ -140,6 +140,89 @@ a, button {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Testimonials Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.5rem));
+  }
+}
+
+@keyframes scroll-sm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.25rem));
+  }
+}
+
+@keyframes scroll-xs {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
+
+@keyframes scroll-reverse-sm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.75rem));
+  }
+}
+
+@keyframes scroll-reverse-xs {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 45s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation: scroll-sm 35s linear infinite;
+  }
+  
+  .animate-scroll-reverse {
+    animation: scroll-reverse-sm 40s linear infinite;
+  }
+}
+
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation: scroll-xs 30s linear infinite;
+  }
+  
+  .animate-scroll-reverse {
+    animation: scroll-reverse-xs 35s linear infinite;
+  }
+}
+
 /* Media query for smaller devices */
 @media (max-width: 640px) {
   body {

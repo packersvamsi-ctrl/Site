@@ -3,6 +3,8 @@ import HeroCarousel from "@/components/HeroCarousel";
 import SectionTitle from "@/components/SectionTitle";
 import Animated from "@/components/Animated";
 import ServiceCard from "@/components/ServiceCard";
+import Testimonials from "@/components/Testimonials";
+import Clients from "@/components/Clients";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -247,28 +249,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Clients Section */}
+      <Clients />
+
       {/* Why Choose Us Section */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-background overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-start">
             <Animated variant="scale-pop" className="order-2 lg:order-1" duration={0.85}>
-              <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-slate-800 to-slate-900">
+              <div className="aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-card-hover bg-gradient-to-br from-orange-500 via-slate-800 to-slate-900 relative">
                 <img
-                  src="/banners/banner-1.jpg"
+                  src="/banners/banner-1.png"
                   alt="Professional moving team"
                   className="w-full h-full object-cover"
                   loading="eager"
                   onLoad={(e) => {
                     (e.target as HTMLImageElement).style.display = 'block';
+                    (e.target as HTMLImageElement).style.opacity = '1';
                   }}
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
                     img.style.display = 'none';
                     if (img.parentElement) {
-                      img.parentElement.style.backgroundColor = '#1e293b';
+                      img.parentElement.style.background = 'linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(30, 41, 59) 100%)';
                     }
                   }}
+                  style={{ opacity: 0, transition: 'opacity 0.5s ease-in' }}
                 />
+                {/* Premium gradient overlay for banner */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </Animated>
             <Animated variant="fade-slide" className="order-1 lg:order-2" duration={0.7}>
@@ -290,6 +299,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20 bg-primary overflow-x-hidden">

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 
 const Footer = () => {
   const services = [
@@ -136,7 +136,19 @@ const Footer = () => {
                   info@vamsipackers.com
                 </a>
               </li>
-            </ul>
+
+              <li className="flex items-center gap-2 xs:gap-2.5 sm:gap-3 min-h-10">
+                <Instagram className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+                <a
+                  href="https://www.instagram.com/vamsipackers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-muted-foreground text-xs xs:text-xs sm:text-sm hover:text-primary transition-colors"
+                >
+                  Instagram
+                </a>
+              </li>
+              </ul>
           </div>
 
           {/* Maps */}
@@ -147,7 +159,7 @@ const Footer = () => {
 
             <div className="w-full h-36 xs:h-40 sm:h-48 rounded-lg overflow-hidden border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.5!2d83.3!3d17.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.857265469847!2d83.29711007621308!3d17.701739868309466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3947496cd7f96f%3A0xcbf21ddaa4a68f32!2sVamsi%20Packers%20%26%20Movers!5e0!3m2!1sen!2sin!4v1707900000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
