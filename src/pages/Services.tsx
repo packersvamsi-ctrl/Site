@@ -148,7 +148,7 @@ const Services = () => {
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <div className={index % 2 === 1 ? "lg:order-2" : "order-2 lg:order-1"}>
+                <div className="order-2 lg:order-none">
                   <div className="w-10 xs:w-12 sm:w-14 md:w-16 h-10 xs:h-12 sm:h-14 md:h-16 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 xs:mb-4 sm:mb-5 md:mb-6">
                     <service.icon className="w-5 xs:w-6 sm:w-7 md:w-8 h-5 xs:h-6 sm:h-7 md:h-8 text-primary" />
                   </div>
@@ -170,8 +170,8 @@ const Services = () => {
                     </Link>
                   </Button>
                 </div>
-                <div className={`order-1 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
-                  <div className="aspect-[4/3] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-muted shadow-card">
+                <div className="order-1 lg:order-none">
+                  <div className="aspect-[16/9] sm:aspect-[4/3] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-muted shadow-card">
                     <img
                       src={
                         index === 0
