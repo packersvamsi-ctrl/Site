@@ -133,7 +133,7 @@ const Footer = () => {
                   href="mailto:info@vamsipackers.com"
                   className="font-body text-muted-foreground text-xs xs:text-xs sm:text-sm hover:text-primary transition-colors break-all"
                 >
-                  info@vamsipackers.com
+                  vamispackers@gmail.com
                 </a>
               </li>
 
@@ -159,12 +159,11 @@ const Footer = () => {
 
             <div className="w-full h-36 xs:h-40 sm:h-48 rounded-lg overflow-hidden border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.857265469847!2d83.29711007621308!3d17.701739868309466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3947496cd7f96f%3A0xcbf21ddaa4a68f32!2sVamsi%20Packers%20%26%20Movers!5e0!3m2!1sen!2sin!4v1707900000000"
+                src="https://www.google.com/maps?q=Vamsi+Packers+%26+Movers+Visakhapatnam&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
-                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vamsi Packers and Movers Location"
               />

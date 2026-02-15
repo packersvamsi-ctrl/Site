@@ -84,7 +84,7 @@ const About = () => {
                 />
               </div>
               <h3 className="font-heading font-semibold text-base xs:text-lg sm:text-xl text-foreground">Founder</h3>
-              <p className="font-subtitle text-xs sm:text-sm text-muted-foreground">(founder name)</p>
+              <p className="font-bold text-md sm:text-sm text-muted-foreground">I. Ramesh, B.A</p>
               <p className="font-body text-muted-foreground mt-2 xs:mt-3 sm:mt-4 text-xs xs:text-xs sm:text-sm md:text-base">
                 With over 30+ years of experience in the logistics industry, our founder established
                 Vamsi Packers and Movers with a vision to provide reliable, safe, and affordable
@@ -237,12 +237,11 @@ const About = () => {
             <h3 className="font-heading font-semibold text-lg xs:text-lg sm:text-xl md:text-2xl mb-2 xs:mb-3 sm:mb-4">Our Location</h3>
             <div className="w-full h-48 xs:h-52 sm:h-56 md:h-64 lg:h-72 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.857265469847!2d83.29711007621308!3d17.701739868309466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3947496cd7f96f%3A0xcbf21ddaa4a68f32!2sVamsi%20Packers%20%26%20Movers!5e0!3m2!1sen!2sin!4v1707900000000"
+                src="https://www.google.com/maps?q=Vamsi+Packers+%26+Movers+Visakhapatnam&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
-                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vamsi Packers and Movers Location"
               />

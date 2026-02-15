@@ -322,13 +322,6 @@ const Index = () => {
               <Button asChild className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11" variant="secondary">
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
-              <Button
-                asChild
-                className="h-10 xs:h-10 sm:h-11 md:h-12 text-xs xs:text-xs sm:text-sm md:text-base min-h-11"
-                variant="outline"
-              >
-                <a href="tel:+919247872222">Call Now: +91 92478 72222</a>
-              </Button>
             </div>
           </Animated>
         </div>

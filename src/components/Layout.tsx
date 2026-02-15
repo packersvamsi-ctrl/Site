@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
+import CallButton from "./CallButton";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main className="flex-1 w-full overflow-x-hidden">{children}</main>
       <Footer />
+      <CallButton />
       <WhatsAppButton />
     </div>
   );

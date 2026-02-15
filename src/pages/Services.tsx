@@ -173,10 +173,25 @@ const Services = () => {
                 <div className={`order-1 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
                   <div className="aspect-[4/3] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-muted shadow-card">
                     <img
-                      src={`/banners/banner-${(index % 5) + 1}.jpg`}
+                      src={
+                        index === 0
+                          ? "/servicesban/packing_unpacking.png"
+                          : index === 1
+                          ? "/servicesban/car_transport.png"
+                          : index === 2
+                          ? "/servicesban/loading _unloading.png"
+                          : index === 3
+                          ? "/servicesban/localshifting.png"
+                          : index === 4
+                          ? "/servicesban/warehousing.png"
+                          : index === 5
+                          ? "/servicesban/transist_insurane.png"
+                          : index === 6
+                          ? "/servicesban/transportation.png"
+                          : "/servicesban/moving.png"
+                      }
                       alt={service.title}
                       className="w-full h-full object-cover"
-                      loading="lazy"
                     />
                   </div>
                 </div>
