@@ -20,7 +20,7 @@ const CallButton = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Call us"
-        className="group fixed bottom-20 sm:bottom-24 md:bottom-28 right-4 sm:right-6 z-50 flex items-center h-11 sm:h-12 md:h-14 w-11 sm:w-12 md:w-14 hover:w-40 sm:hover:w-48 md:hover:w-52 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 ease-out overflow-hidden focus:outline-none focus:ring-2 focus:ring-green-500/50"
+        className="group fixed bottom-20 sm:bottom-24 md:bottom-28 right-4 sm:right-6 z-50 flex items-center h-11 sm:h-12 md:h-14 w-11 sm:w-12 md:w-14 hover:w-40 sm:hover:w-48 md:hover:w-52 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg transition-all duration-300 ease-out overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-500/50"
       >
         {/* Icon */}
         <div className="flex items-center justify-center h-11 sm:h-12 md:h-14 w-11 sm:w-12 md:w-14 flex-shrink-0">
@@ -61,8 +61,8 @@ const CallButton = () => {
                   onClick={() => handleCall(item.number)}
                   className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-green-500 hover:bg-green-50 transition-all duration-200 group"
                 >
-                  <div className="h-12 w-12 rounded-full bg-green-100 group-hover:bg-green-200 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-green-600" />
+                  <div className="h-12 w-12 rounded-full bg-orange-100 group-hover:bg-orange-200 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-orange-600" />
                   </div>
                   <div className="flex-1 text-left">
                     <p className="font-body font-semibold text-gray-900">

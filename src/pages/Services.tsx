@@ -102,14 +102,14 @@ const services = [
   },
   {
     icon: PackageOpen,
-    title: "Moving",
+    title: "Towing",
     description:
-      "Complete moving solutions for residential and commercial relocations. From planning to execution, we handle everything for a seamless move. Project managers coordinate timelines, packing lists, transit windows and onsite setup so relocations finish on schedule with minimal disruption. We provide pre-move surveys, detailed checklists, subcontractor coordination, protective measures, and a final walkthrough to confirm client satisfaction and functionality.",
+      "Professional vehicle towing services available 24/7 for emergencies and breakdowns. Our certified towing operators handle all vehicle types with specialized equipment and careful handling. We provide quick response times, safe recovery of disabled vehicles, and transport to your preferred service center or destination. Equipment includes flatbeds, dollies, and winches to safely tow any vehicle without damage to suspension or body.",
     features: [
-      "Complete relocation",
-      "Office shifting",
-      "Residential moving",
-      "End-to-end service",
+      "24/7 availability",
+      "All vehicle types",
+      "Safe recovery",
+      "Quick response",
     ],
   },
 ];
@@ -188,7 +188,7 @@ const Services = () => {
                           ? "/servicesban/transist_insurane.png"
                           : index === 6
                           ? "/servicesban/transportation.png"
-                          : "/servicesban/moving.png"
+                          : "/banners/banner-2.jpg"
                       }
                       alt={service.title}
                       className="w-full h-full object-cover"
