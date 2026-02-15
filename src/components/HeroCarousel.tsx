@@ -63,7 +63,7 @@ const HeroSection = () => {
       
       {/* Banner image with fallback */}
       <div
-        className={`absolute inset-0 transition-transform duration-[4200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`absolute inset-0 transition-transform ${
           zoomDone ? "scale-100" : "scale-[1.04]"
         }`}
         style={{
@@ -73,18 +73,22 @@ const HeroSection = () => {
           backgroundRepeat: "no-repeat",
           willChange: "transform",
           backgroundColor: "#1e293b",
+          transitionDuration: "4200ms",
+          transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
         }}
       />
 
       {/* ---------- 2. GRADIENT OVERLAY (1.5 seconds fade-in) ---------- */}
       <div
-        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`absolute inset-0 transition-opacity ${
           gradientVisible ? "opacity-100" : "opacity-0"
         }`}
         style={{
           background:
             "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.9) 100%)",
           willChange: "opacity",
+          transitionDuration: "1500ms",
+          transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
         }}
       />
 
@@ -93,11 +97,15 @@ const HeroSection = () => {
         
         {/* ---------- 3. TITLE (glides up 1.2 seconds) ---------- */}
         <h1
-          className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          className={`transition-all ${
             titleVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-8 opacity-0"
           }`}
+          style={{
+            transitionDuration: "1200ms",
+            transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
+          }}
         >
           <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] 2xl:text-[7.5rem] font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] drop-shadow-2xl leading-tight sm:leading-tight">
             <span className="text-orange-500">Vamsi</span>{" "}
@@ -121,11 +129,15 @@ const HeroSection = () => {
 
         {/* ---------- 5. BUTTONS (pop in with scale + fade) ---------- */}
         <div
-          className={`mt-8 xs:mt-10 sm:mt-14 md:mt-16 flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-6 transition-all duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] px-3 ${
+          className={`mt-8 xs:mt-10 sm:mt-14 md:mt-16 flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-6 transition-all px-3 ${
             buttonsVisible
               ? "translate-y-0 opacity-100 scale-100"
               : "translate-y-4 opacity-0 scale-95"
           }`}
+          style={{
+            transitionDuration: "1000ms",
+            transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
+          }}
         >
           <Button
             asChild
