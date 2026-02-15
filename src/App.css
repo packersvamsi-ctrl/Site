@@ -56,6 +56,18 @@ body {
   box-sizing: border-box;
 }
 
+/* GPU Acceleration for smooth animations */
+.animate-in,
+.animate-out,
+[class*="animate-"],
+[class*="transition-"],
+button,
+a {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 main {
   width: 100%;
   overflow-x: hidden;
